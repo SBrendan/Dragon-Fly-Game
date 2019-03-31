@@ -8,11 +8,7 @@
 /[Ll]ogs/
 
 # Never ignore Asset meta data
-<<<<<<< HEAD
-!/[Aa]ssets/**/*.meta
-=======
 !/[Aa]ssets/*/.meta
->>>>>>> 70dacd93b99354c08098f7f24a9057275bbdc36b
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -57,8 +53,4 @@ sysinfo.txt
 *.unitypackage
 
 # Crashlytics generated file
-<<<<<<< HEAD
 crashlytics-build.properties
-=======
-crashlytics-build.properties
->>>>>>> 70dacd93b99354c08098f7f24a9057275bbdc36b
