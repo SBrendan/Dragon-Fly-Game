@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
+<<<<<<< HEAD
   lastUpdatedAtString: 2019-03-31T19:48:02.394+02:00
   initializedAtString: 2019-03-31T19:48:02.394+02:00
+=======
+  lastUpdatedAtString: 2019-03-31T19:47:41.893+02:00
+  initializedAtString: 2019-03-31T19:47:41.893+02:00
+>>>>>>> 3cce824e7c67ec1936b0324a93614c4e56f28acd
   currentGitRemote:
     name: origin
     url: https://github.com/SBrendan/Dragon-Fly-Game.git
