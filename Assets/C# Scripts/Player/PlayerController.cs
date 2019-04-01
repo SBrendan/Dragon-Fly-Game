@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         MainMenuController mainMenu = GameObject.Find("GameMenu").GetComponent<MainMenuController>();
+        mainMenu.
     }
     // Update is called once per frame
     void Update()
