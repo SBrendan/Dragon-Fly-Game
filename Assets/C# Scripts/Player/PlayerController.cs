@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetPos;
     public float Yincrement;
     public float Xincrement;
+
+    private void Start()
+    {
+        MainMenuController mainMenu = GameObject.Find("GameMenu").GetComponent<MainMenuController>();
+    }
     // Update is called once per frame
     void Update()
     {
