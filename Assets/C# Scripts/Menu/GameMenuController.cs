@@ -16,4 +16,9 @@ public class GameMenuController : MonoBehaviour
         Debug.Log("The user asked to resume game");
         SceneManager.LoadScene(1);
     }
+
+    public void OpenGameMenu()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
