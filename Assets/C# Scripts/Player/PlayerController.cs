@@ -67,6 +67,19 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("IsShooting", false);
             }
         }
+
+        FireTimer -= Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
+        {
+            animator.SetBool("IsShooting", true);
+            Debug.Log("BIM!");
+            Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
+            FireTimer = FireDelay;
+        }
+        else
+        {
+            animator.SetBool("IsShooting", false);
+        }
     }
 
 }
