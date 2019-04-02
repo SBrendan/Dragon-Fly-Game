@@ -32,14 +32,14 @@ public class GameMenuController : MonoBehaviour
 
     public void Resume()
     {
-        GameOption.setActive(false);
+        GameOption.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     public void Pause()
     {
-        GameOption.setActive(true);
+        GameOption.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
