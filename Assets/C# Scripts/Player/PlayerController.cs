@@ -5,14 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    // Shooting stuff
     public Animator animator;
     public float FireDelay = 0.6f;
     float FireTimer;
     public GameObject Fireball;
     public Vector2 FireballOffset = new Vector2(1.3f, -0.3f);
+
+    // Moving stuff
     private Vector2 targetPos;
     public float Yincrement;
     public float Xincrement;
+
+    // Misc
+    public float health = 3f;
 
     private void Start()
     {
@@ -58,6 +64,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("IsShooting", false);
+        }
+        if (health <= 0f)
+        {
+            Debug.Log("PAN T MOR");
+            Destroy(gameObject);
         }
     }
 }
