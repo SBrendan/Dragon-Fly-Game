@@ -1,24 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenuController : MonoBehaviour
 {
+    public bool GameIsPaused = false;
+    public GameObject GameOption;
+
     public void QuitGame()
     {
         Debug.Log("The user asked to quit game");
         Application.Quit();
     }
 
-    public void ResumeGame()
+    private void Update()
     {
-        Debug.Log("The user asked to resume game");
-        SceneManager.LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+
+        }
     }
 
-    public void OpenGameMenu()
+    public void Resume()
     {
-        SceneManager.LoadScene(2);
+        GameOption.setActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    public void Pause()
+    {
+        GameOption.setActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 }

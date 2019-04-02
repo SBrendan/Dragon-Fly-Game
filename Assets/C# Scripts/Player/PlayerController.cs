@@ -16,41 +16,75 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetPos;
     public float Yincrement;
     public float Xincrement;
+    private GameMenuController gameMenuController;
+    private bool gameIsPaused;
 
     // Misc
     public float health = 3f;
 
     private void Start()
     {
-        MainMenuController mainMenu = GameObject.Find("GameMenu").GetComponent<MainMenuController>();
+        gameMenuController = GameObject.FindObjectOfType<GameMenuController>();
+        gameIsPaused = gameMenuController.GameIsPaused;
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        gameIsPaused = gameMenuController.GameIsPaused;
+        if (!gameIsPaused)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-            transform.position = targetPos;
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                transform.position = targetPos;
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+                transform.position = targetPos;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
+                transform.position = targetPos;
+                transform.position = targetPos;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
+                transform.position = targetPos;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y - Yincrement);
+                transform.position = targetPos;
+            }
+
+            FireTimer -= Time.deltaTime;
+            if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
+            {
+                animator.SetBool("IsShooting", true);
+                Debug.Log("BIM!");
+                Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
+                FireTimer = FireDelay;
+            }
+            else
+            {
+                animator.SetBool("IsShooting", false);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+
+        FireTimer -= Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            transform.position = targetPos;
+            animator.SetBool("IsShooting", true);
+            Debug.Log("BIM!");
+            Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
+            FireTimer = FireDelay;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else
         {
-            targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y - Yincrement);
-            transform.position = targetPos;
+            animator.SetBool("IsShooting", false);
         }
 
         FireTimer -= Time.deltaTime;
@@ -71,4 +105,5 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
