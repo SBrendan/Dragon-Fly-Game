@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenuController : MonoBehaviour
 {
     public bool GameIsPaused = false;
-
     public GameObject GameOption;
+
     public void QuitGame()
     {
         Debug.Log("The user asked to quit game");
@@ -21,7 +21,8 @@ public class GameMenuController : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-            } else
+            }
+            else
             {
                 Pause();
             }
