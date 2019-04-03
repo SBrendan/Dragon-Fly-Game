@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetPos;
     public float Yincrement;
     public float Xincrement;
+    public float speed;
+    public float maxHeight;
+    public float minHeight;
 
     // Misc
     public float health = 3f;
@@ -23,30 +26,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
+        } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight) {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
-            transform.position = targetPos;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y - Yincrement);
-            transform.position = targetPos;
         }
 
         FireTimer -= Time.deltaTime;
@@ -56,13 +44,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("BIM!");
             Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
             FireTimer = FireDelay;
+        } else {
+           animator.SetBool("IsShooting", false);
         }
-        else
-        {
-            animator.SetBool("IsShooting", false);
-        }
-        if (health <= 0f)
-        {
+
+        if (health <= 0f) {
             Debug.Log("PAN T MOR");
             Destroy(gameObject);
         }
