@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour
     public float health = 1f;
     public float damage = 1f;
     private Vector2 MoveRight;
+    public GameObject Explosion;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +27,7 @@ public class Fireball : MonoBehaviour
         } else if (collision.CompareTag("Ennemies"))
         {
             collision.GetComponent<Ennemies>().health -= damage;
+            Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
