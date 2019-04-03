@@ -464,6 +464,11 @@ PrefabInstance:
       propertyPath: FireballOffset.y
       value: -0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1535557953062949237, guid: 0bf2ec149dc04554482f8bf00d4e2671,
+        type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3782361371751249401, guid: 0bf2ec149dc04554482f8bf00d4e2671,
         type: 3}
       propertyPath: m_IsTrigger
@@ -583,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &705614610
 RectTransform:
   m_ObjectHideFlags: 0
