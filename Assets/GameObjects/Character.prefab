@@ -90,7 +90,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25555
   m_Sprite: {fileID: 21300002, guid: 365394d6a194ccc46a5fc4e42ae2462b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,6 +121,9 @@ MonoBehaviour:
   FireballOffset: {x: 0.4, y: -0.4}
   Yincrement: 5
   Xincrement: 2
+  speed: 10
+  maxHeight: 5
+  minHeight: -5
   health: 3
 --- !u!58 &3782361371751249401
 CircleCollider2D:
