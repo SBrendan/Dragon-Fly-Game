@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 596.09924, y: -292.8997}
+  m_AnchoredPosition: {x: 564, y: -264}
   m_SizeDelta: {x: 41.98, y: 39.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5402467737252962092
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4163697156114976040}
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 5402467738935620892}
   - component: {fileID: 5402467738935620895}
   - component: {fileID: 5402467738935620894}
+  - component: {fileID: 4163697156114976040}
   m_Layer: 5
   m_Name: Canvas UI
   m_TagString: Untagged
@@ -252,7 +253,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 8282045919661698879, guid: 35ac86d06c4c69948ab5a1efd80b31a3,
+    type: 3}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -261,7 +263,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 255
+  m_SortingOrder: 256
   m_TargetDisplay: 0
 --- !u!114 &5402467738935620895
 MonoBehaviour:
@@ -302,3 +304,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4163697156114976040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402467738935620865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcce6114df89b514cbd550923d64d687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameIsPaused: 0
+  GameOption: {fileID: 4672140144812066345, guid: 529656b6c3f22c145a48966b7096c281,
+    type: 3}
