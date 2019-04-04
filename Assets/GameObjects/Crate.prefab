@@ -146,6 +146,7 @@ MonoBehaviour:
   health: 3
   Explosion: {fileID: 8687653819316884453, guid: 268e9747dc647104099d45d2fe4377c2,
     type: 3}
+  damage: 1
 --- !u!114 &7997818955753150801
 MonoBehaviour:
   m_ObjectHideFlags: 0

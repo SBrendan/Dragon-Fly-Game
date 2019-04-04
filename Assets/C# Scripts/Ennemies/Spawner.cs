@@ -7,14 +7,17 @@ public class Spawner : MonoBehaviour
     public GameObject obstacle;
     public float TimeBetweenSpawn = 1f;
     public float StartTime = 1f;
-    public GameObject player;
-    //float increment = player.GetComponent<PlayerController>().Yincrement;
-    float[] possible_values = new float[3] { -5f, 0f, 5f};
+    float increment;
+    float[] possible_values = new float[3];
 
     void Start()
     {
+        increment = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Yincrement;
+        possible_values[0] = increment * -1;
+        possible_values[1] = 0f;
+        possible_values[2] = increment;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
