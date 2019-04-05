@@ -128,3 +128,5 @@ MonoBehaviour:
   damage: 1
   Explosion: {fileID: 2684588865915630269, guid: 8f22298429a526b438dbe36f16f2a639,
     type: 3}
+  Particles: {fileID: 2506976455570272328, guid: 562a306b129d874408554f18078f20a8,
+    type: 3}

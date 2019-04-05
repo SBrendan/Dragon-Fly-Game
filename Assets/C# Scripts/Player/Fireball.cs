@@ -9,6 +9,7 @@ public class Fireball : MonoBehaviour
     public float damage = 1f;
     private Vector2 MoveRight;
     public GameObject Explosion;
+    public GameObject Particles;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +29,7 @@ public class Fireball : MonoBehaviour
         {
             collision.GetComponent<Ennemies>().health -= damage;
             Instantiate(Explosion, transform.position, Quaternion.identity);
+            Instantiate(Particles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
