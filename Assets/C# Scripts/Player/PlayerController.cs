@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float maxHeight;
     public float minHeight;
+    private bool IsDead = false; 
 
     // Misc
     public float health = 3f;
@@ -26,31 +27,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
-            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-        } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight) {
-            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
-        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
-        }
-
-        FireTimer -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
+        if (IsDead != true)
         {
-            animator.SetBool("IsShooting", true);
-            Debug.Log("BIM!");
-            Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
-            FireTimer = FireDelay;
-        } else {
-           animator.SetBool("IsShooting", false);
-        }
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
+            }
 
-        if (health <= 0f) {
-            Debug.Log("PAN T MOR");
-            Destroy(gameObject);
+            FireTimer -= Time.deltaTime;
+            if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
+            {
+                animator.SetBool("IsShooting", true);
+                Debug.Log("BIM!");
+                Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
+                FireTimer = FireDelay;
+            }
+            else
+            {
+                animator.SetBool("IsShooting", false);
+            }
         }
     }
 
@@ -59,7 +67,17 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Ennemies"))
         {
             health -= collision.GetComponent<Ennemies>().damage;
-            animator.SetTrigger("TakeDamage");
+            if (health > 0f)
+            {
+                animator.SetTrigger("TakeDamage");
+            }
+            else
+            {
+                animator.SetTrigger("IsDead");
+                IsDead = true;
+                Debug.Log("PAN T MOR");
+                Destroy(gameObject, 4f);
+            }
         }
     }
 }

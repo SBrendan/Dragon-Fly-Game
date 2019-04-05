@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: b52e123336f59eb46948670346e08913
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: game_over_fly_0
+    21300002: game_over_fly_1
+    21300004: game_over_fly_2
+    21300006: game_over_fly_3
+    21300008: game_over_fly_4
+    21300010: game_over_fly_5
+    21300012: game_over_fly_6
+    21300014: game_over_fly_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -82,7 +90,167 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: game_over_fly_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 96
+        width: 566
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b402bdb4d651cc42bba8f872a385ed7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 96
+        width: 568
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4250c0eebd001274a8e3bf5e2c394302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_2
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 96
+        width: 565
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df35937faddf61945a586f6d5093ac66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_3
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 62
+        width: 566
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3414a790629e7ae4dbd4f0ee8ddfd145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_4
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 6
+        width: 567
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca9791f158949b438b145a4150c0e9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_5
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 64
+        width: 566
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44efb28168108dc43840532ac9412f1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_6
+      rect:
+        serializedVersion: 2
+        x: 3582
+        y: 96
+        width: 568
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4721d4eb4099d634a889d8f72c5769cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_fly_7
+      rect:
+        serializedVersion: 2
+        x: 4178
+        y: 96
+        width: 566
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cecc8fde5ffa04bb852364229aa1d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
