@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject Level;
 
     public void PlayGame ()
     {
-        Debug.Log("toto");
-        Instantiate(Level);
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame ()
