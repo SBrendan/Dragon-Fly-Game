@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     float FireTimer;
     public GameObject Fireball;
     public Vector2 FireballOffset = new Vector2(1.3f, -0.3f);
+    public static PlayerController instance;
 
     // Moving stuff
     private Vector2 targetPos;
@@ -19,10 +20,23 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float maxHeight;
     public float minHeight;
-    private bool IsDead = false; 
+    public bool IsDead = false; 
 
     // Misc
     public float health = 3f;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

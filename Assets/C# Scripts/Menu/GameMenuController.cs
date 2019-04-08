@@ -8,6 +8,7 @@ public class GameMenuController : MonoBehaviour
     public bool GameIsPaused = false;
     public GameObject GameOption;
 
+
     public void QuitGame()
     {
         Debug.Log("The user asked to quit game");
