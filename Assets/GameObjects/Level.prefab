@@ -192,6 +192,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2422681637441129145}
     m_Modifications:
+    - target: {fileID: 9015463497212762166, guid: e2375aae688d9704ea34e6df3b123bb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 9015463497212762162, guid: e2375aae688d9704ea34e6df3b123bb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -302,11 +307,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9015463497212762166, guid: e2375aae688d9704ea34e6df3b123bb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas Menu
-      objectReference: {fileID: 0}
     - target: {fileID: 9015463495744858204, guid: e2375aae688d9704ea34e6df3b123bb1,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -352,6 +352,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2422681637441129145}
     m_Modifications:
+    - target: {fileID: 5402467738935620865, guid: d0d75ab4d208f1c46a1253bbdc2c04f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5402467738935620893, guid: d0d75ab4d208f1c46a1253bbdc2c04f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,10 +462,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5402467738935620865, guid: d0d75ab4d208f1c46a1253bbdc2c04f7,
+    - target: {fileID: 5402467738935620892, guid: d0d75ab4d208f1c46a1253bbdc2c04f7,
         type: 3}
-      propertyPath: m_Name
-      value: Canvas UI
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d75ab4d208f1c46a1253bbdc2c04f7, type: 3}
@@ -477,6 +482,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2422681637441129145}
     m_Modifications:
+    - target: {fileID: 3037966709773595867, guid: 3cd38749bdf74ce4ca8873ca988e6909,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3037966709773595865, guid: 3cd38749bdf74ce4ca8873ca988e6909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,11 +541,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037966709773595867, guid: 3cd38749bdf74ce4ca8873ca988e6909,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd38749bdf74ce4ca8873ca988e6909, type: 3}
