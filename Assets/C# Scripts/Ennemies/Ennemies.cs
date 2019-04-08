@@ -8,6 +8,8 @@ public class Ennemies : MonoBehaviour
     public float health = 3f;
     public GameObject Explosion;
     public float damage;
+    public float avoid_point = 1f;
+    public float destruct_point = 3f;
     private GameObject PlayerAnimator;
 
     void Start()
@@ -22,6 +24,7 @@ public class Ennemies : MonoBehaviour
         if (health <= 0f)
         {
             Instantiate(Explosion, transform.position, Quaternion.identity);
+            GameObject.FindGameObjectWithTag("Scorer").GetComponent<Scorer>().Score += destruct_point;
             Destroy(gameObject);
         }
     }
