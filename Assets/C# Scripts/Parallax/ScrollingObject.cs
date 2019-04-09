@@ -16,13 +16,4 @@ public class ScrollingObject : MonoBehaviour
         //Start the object moving.
         rb2d.velocity = new Vector2(scrollSpeed, 0);
     }
-
-    void Update()
-    {
-        // If the game is over, stop scrolling.
-        if (PlayerController.instance.IsDead == true)
-        {
-            rb2d.velocity = Vector2.zero;
-        }
-    }
 }

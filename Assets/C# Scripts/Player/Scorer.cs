@@ -27,7 +27,7 @@ public class Scorer : MonoBehaviour
         if (collision.CompareTag("Ennemies"))
         {
             Score += collision.GetComponent<Ennemies>().avoid_point;
-            Debug.Log("Score : " + Score.ToString());
+        // Debug.Log("Score : " + Score.ToString());
         }
     }
 }

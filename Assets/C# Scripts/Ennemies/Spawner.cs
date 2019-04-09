@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     {
         if (TimeBetweenSpawn <= 0f)
         {
-            Debug.Log("Spawnage");
+            //Debug.Log("Spawnage");
             int rand = Random.Range(0, possible_values.Length);
             Instantiate(obstacle, new Vector2(transform.position.x, transform.position.y + possible_values[rand]), Quaternion.identity);
             //Instantiate(obstacle);

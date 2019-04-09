@@ -44,9 +44,12 @@ public class PlayerController : MonoBehaviour
         if (IsDead != true)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
+            var keyAlreadyPressed = false;
+            if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < maxHeight && keyAlreadyPressed != true)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+                keyAlreadyPressed = true;
+                Debug.Log(keyAlreadyPressed);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
             {

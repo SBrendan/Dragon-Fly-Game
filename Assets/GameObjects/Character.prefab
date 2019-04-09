@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535557953062949233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: 0.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.262, y: 0.262, z: 0.262}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,7 +123,8 @@ MonoBehaviour:
   Xincrement: 2
   speed: 10
   maxHeight: 5
-  minHeight: -5
+  minHeight: -3
+  IsDead: 0
   health: 1000
 --- !u!58 &3782361371751249401
 CircleCollider2D:
