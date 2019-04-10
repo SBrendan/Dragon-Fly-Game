@@ -124,6 +124,8 @@ MonoBehaviour:
   speed: 10
   maxHeight: 5
   minHeight: -3
+  maxX: 5
+  minX: -5
   IsDead: 0
   health: 1000
 --- !u!58 &3782361371751249401

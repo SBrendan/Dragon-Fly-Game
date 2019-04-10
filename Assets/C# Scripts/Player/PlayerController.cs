@@ -14,12 +14,18 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     // Moving stuff
-    private Vector2 targetPos;
+    //private Vector2 targetPos;
+    private Vector2 targetPosYUp;
+    private Vector2 targetPosYDown;
+    private Vector2 targetPosXRight;
+    private Vector2 targetPosXLeft;
     public float Yincrement;
     public float Xincrement;
     public float speed;
     public float maxHeight;
     public float minHeight;
+    public float maxX;
+    public float minX;
     public bool IsDead = false; 
 
     // Misc
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsDead != true)
         {
+            /* //////////////// OLD MOVEMENT ////////////////
             transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             var keyAlreadyPressed = false;
             if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < maxHeight && keyAlreadyPressed != true)
@@ -63,7 +70,52 @@ public class PlayerController : MonoBehaviour
             {
                 targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
             }
+            */
 
+            //////////////// SMOOTH AS HELL ////////////////
+            targetPosYUp = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            targetPosYDown = new Vector2(transform.position.x, transform.position.y - Yincrement);
+
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                if (targetPosYUp.y > maxHeight)
+                {
+                    targetPosYUp = new Vector2(transform.position.x, maxHeight);
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetPosYUp, speed * Time.deltaTime);
+
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                if (targetPosYDown.y < minHeight)
+                {
+                    targetPosYDown = new Vector2(transform.position.x, minHeight);
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetPosYDown, speed * Time.deltaTime);
+            }
+
+            targetPosXRight = new Vector2(transform.position.x + Xincrement, transform.position.y);
+            targetPosXLeft = new Vector2(transform.position.x - Xincrement, transform.position.y);
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                if (targetPosXRight.x > maxX)
+                {
+                    targetPosXRight = new Vector2(maxX, transform.position.y);
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetPosXRight, speed * Time.deltaTime);
+
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                if (targetPosXLeft.x < minX)
+                {
+                    targetPosXLeft = new Vector2(minX, transform.position.y);
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetPosXLeft, speed * Time.deltaTime);
+            }
+
+            //////////////// Firing ////////////////
             FireTimer -= Time.deltaTime;
             if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
             {
