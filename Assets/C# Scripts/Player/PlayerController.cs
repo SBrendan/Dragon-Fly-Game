@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float FireDelay = 0.6f;
     float FireTimer;
     public GameObject Fireball;
+    public GameObject GameOver;
+    public GameObject Scorer;
     public Vector2 FireballOffset = new Vector2(1.3f, -0.3f);
     public static PlayerController instance;
 
@@ -49,29 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         if (IsDead != true)
         {
-            /* //////////////// OLD MOVEMENT ////////////////
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-            var keyAlreadyPressed = false;
-            if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < maxHeight && keyAlreadyPressed != true)
-            {
-                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-                keyAlreadyPressed = true;
-                Debug.Log(keyAlreadyPressed);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
-            {
-                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
-            }
-            */
-
             //////////////// SMOOTH AS HELL ////////////////
             targetPosYUp = new Vector2(transform.position.x, transform.position.y + Yincrement);
             targetPosYDown = new Vector2(transform.position.x, transform.position.y - Yincrement);
@@ -144,9 +123,16 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetTrigger("IsDead");
                 IsDead = true;
+                Destroy(this.Scorer);
                 Debug.Log("PAN T MOR");
+                Invoke("RenderGameOver", 4);
                 Destroy(gameObject, 4f);
             }
         }
+    }
+
+    private void RenderGameOver()
+    {
+        GameOver.SetActive(true);
     }
 }

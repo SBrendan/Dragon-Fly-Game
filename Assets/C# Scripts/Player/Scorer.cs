@@ -9,7 +9,20 @@ public class Scorer : MonoBehaviour
 {
     public float Score = 0f;
     public TextMeshProUGUI  ScoreDisplay;
-    
+    public static Scorer instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +42,10 @@ public class Scorer : MonoBehaviour
             Score += collision.GetComponent<Ennemies>().avoid_point;
         // Debug.Log("Score : " + Score.ToString());
         }
+    }
+
+    public float GetScore()
+    {
+        return Score;
     }
 }
