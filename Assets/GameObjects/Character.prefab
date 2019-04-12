@@ -118,14 +118,16 @@ MonoBehaviour:
   FireDelay: 0.2
   Fireball: {fileID: 1608707373368051468, guid: 1bab514293d9338488921c9f77ef07e0,
     type: 3}
+  GameOver: {fileID: 0}
+  Scorer: {fileID: 0}
   FireballOffset: {x: 0.4, y: -0.4}
   Yincrement: 5
   Xincrement: 2
   speed: 10
   maxHeight: 5
   minHeight: -3
-  maxX: 5
-  minX: -5
+  maxX: 9.5
+  minX: -9.5
   IsDead: 0
   health: 1000
 --- !u!58 &3782361371751249401

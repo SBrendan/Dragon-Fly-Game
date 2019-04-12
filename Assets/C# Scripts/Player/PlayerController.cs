@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     // Misc
     public float health = 3f;
+    private CamShake shaker;
 
     void Awake()
     {
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        shaker = GameObject.FindGameObjectWithTag("ShakeManager").GetComponent<CamShake>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -99,7 +104,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && FireTimer <= 0f)
             {
                 animator.SetBool("IsShooting", true);
-                Debug.Log("BIM!");
+                Debug.Log("Fireball shoot!");
                 Instantiate(Fireball, new Vector2(transform.position.x + FireballOffset.x, transform.position.y + FireballOffset.y), Quaternion.identity);
                 FireTimer = FireDelay;
             }
@@ -112,9 +117,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ennemies"))
+        if (collision.CompareTag("Enemies"))
         {
-            health -= collision.GetComponent<Ennemies>().damage;
+            shaker.Shake();
+            health -= collision.GetComponent<Enemies>().damage;
             if (health > 0f)
             {
                 animator.SetTrigger("TakeDamage");

@@ -20,14 +20,10 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Enemies"))
         {
-            collision.GetComponent<PlayerController>().health -= damage;
-            Destroy(gameObject);
-            Debug.Log("OWNED!!!!!");
-        } else if (collision.CompareTag("Ennemies"))
-        {
-            collision.GetComponent<Ennemies>().health -= damage;
+            Debug.Log("Fireball hit an enemy!");
+            collision.GetComponent<Enemies>().health -= damage;
             Instantiate(Explosion, transform.position, Quaternion.identity);
             Instantiate(Particles, transform.position, Quaternion.identity);
             Destroy(gameObject);

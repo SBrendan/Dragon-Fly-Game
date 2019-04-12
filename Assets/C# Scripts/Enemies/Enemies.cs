@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ennemies : MonoBehaviour
+public class Enemies : MonoBehaviour
 {
     public float speed = 7f;
     public float health = 3f;

@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fireball
-  - Ennemies
   - Level
+  - Scorer
+  - Enemies
+  - Ennemies
+  - ShakeManager
   layers:
   - Default
   - TransparentFX

@@ -37,9 +37,9 @@ public class Scorer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ennemies"))
+        if (collision.CompareTag("Enemies"))
         {
-            Score += collision.GetComponent<Ennemies>().avoid_point;
+            Score += collision.GetComponent<Enemies>().avoid_point;
         // Debug.Log("Score : " + Score.ToString());
         }
     }

@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3467536556067349813}
   - component: {fileID: 3467536556067349812}
   - component: {fileID: 3467536556067349815}
-  - component: {fileID: 4032178802477960836}
+  - component: {fileID: 4720400035374138984}
   - component: {fileID: 7997818955753150801}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Ennemies
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &4032178802477960836
+--- !u!114 &4720400035374138984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
