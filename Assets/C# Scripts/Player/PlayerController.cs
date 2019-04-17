@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Misc
     public float health = 3f;
     private CamShake shaker;
+    public TextMeshProUGUI HealthDisplay;
 
     void Awake()
     {
@@ -54,6 +57,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HealthDisplay.text = health.ToString();
+
         if (IsDead != true)
         {
             //////////////// SMOOTH AS HELL ////////////////
