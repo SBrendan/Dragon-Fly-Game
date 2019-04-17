@@ -149,6 +149,8 @@ MonoBehaviour:
   damage: 1
   avoid_point: 1
   destruct_point: 3
+  TimeBeforeBoost: 2
+  SpeedMultiplier: 1.6
 --- !u!114 &7997818955753150801
 MonoBehaviour:
   m_ObjectHideFlags: 0

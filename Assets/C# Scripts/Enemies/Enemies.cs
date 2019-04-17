@@ -11,15 +11,27 @@ public class Enemies : MonoBehaviour
     public float avoid_point = 1f;
     public float destruct_point = 3f;
     private GameObject PlayerAnimator;
-
+    public float TimeBeforeBoost = 2f;
+    public float SpeedMultiplier = 1.6f;
+    private float TimeBetweenBoostSpeed_a, TimeBetweenBoostSpeed_b;
+    private bool Boosted = false;
     void Start()
     {
-                
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (TimeBeforeBoost <= 0f && Boosted == false)
+        {
+            speed *= SpeedMultiplier;
+            Boosted = true;
+        } else
+        {
+            TimeBeforeBoost -= Time.deltaTime;
+        }
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (health <= 0f)
         {

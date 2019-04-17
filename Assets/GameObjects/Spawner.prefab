@@ -47,4 +47,5 @@ MonoBehaviour:
     type: 3}
   TimeBetweenSpawn: 1
   StartTime: 1
-  player: {fileID: 1535557953062949233, guid: 0bf2ec149dc04554482f8bf00d4e2671, type: 3}
+  TimeBetweenBoost: 10
+  MultiplierAtBoost: 2
